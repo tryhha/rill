@@ -1,0 +1,8 @@
+# Source YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/sources
+  
+type: source
+
+connector: "postgres"
+sql: "SELECT *, SPLIT_PART(report_name, '(', 1) AS customer FROM dep_processing.logs ORDER BY id DESC;"
+database_url: "postgresql://amarygin:1q2w3e4r5t6y7u8i9o0@192.168.4.194:5432/playground"

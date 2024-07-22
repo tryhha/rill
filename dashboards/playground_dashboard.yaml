@@ -1,0 +1,111 @@
+# Dashboard YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/dashboards
+# This file was generated using AI.
+
+type: metrics_view
+title: Playground Metrics
+table: playground
+dimensions:
+  - label: Report Name
+    column: report_name
+    description: ""
+  - label: Log Level
+    column: log_level
+    description: ""
+  - label: Message
+    column: message
+    description: ""
+  - label: Customer
+    column: customer
+    description: ""
+measures:
+  - name: total_entries
+    label: Total Entries
+    expression: COUNT(*)
+    description: Total number of entries in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: unique_reports
+    label: Unique Reports
+    expression: COUNT(DISTINCT report_name)
+    description: Total number of unique report names in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: unique_log_levels
+    label: Unique Log Levels
+    expression: COUNT(DISTINCT log_level)
+    description: Total number of unique log levels in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: unique_customers
+    label: Unique Customers
+    expression: COUNT(DISTINCT customer)
+    description: Total number of unique customers in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: max_id
+    label: Maximum ID
+    expression: MAX(id)
+    description: The highest ID value in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: min_id
+    label: Minimum ID
+    expression: MIN(id)
+    description: The lowest ID value in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: average_id
+    label: Average ID
+    expression: AVG(id)
+    description: The average ID value in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_messages
+    label: Total Messages
+    expression: COUNT(message)
+    description: Total number of messages in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: unique_messages
+    label: Unique Messages
+    expression: COUNT(DISTINCT message)
+    description: Total number of unique messages in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_customers
+    label: Total Customers
+    expression: COUNT(customer)
+    description: Total number of customer entries in the playground table.
+    format_preset: humanize
+    valid_percent_of_total: false
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney
+available_time_ranges:
+  - PT6H
+  - PT24H
+  - P7D
+  - P14D
+  - P4W
+  - P3M
+  - P12M
+  - rill-TD
+  - rill-WTD
+  - rill-MTD
+  - rill-QTD
+  - rill-YTD
+  - rill-PDC
+  - rill-PWC
+  - rill-PMC
+  - rill-PQC
+  - rill-PYC
